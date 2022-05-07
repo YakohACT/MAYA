@@ -1,0 +1,37 @@
+using System;
+
+using Autodesk.Maya.Runtime;
+using Autodesk.Maya.OpenMaya;
+
+[assembly: MPxCommandClass(typeof(MayaNetPlugin.helloWorldCmd), "helloWorldCmd")]
+[assembly: ExtensionPlugin(typeof(MayaNetPlugin.helloWorldPlugin), "Autodesk", "1.0", "Any")]
+
+namespace MayaNetPlugin
+{
+    public class helloWorldPlugin : IExtensionPlugin
+    {
+        bool IExtensionPlugin.InitializePlugin()
+        {
+            return true;
+        }
+
+        bool IExtensionPlugin.UninitializePlugin()
+        {
+            return true;
+        }
+        String IExtensionPlugin.GetMayaDotNetSdkBuildVersion()
+        {
+            String version = "";
+            return version;
+        }
+
+    }
+
+    public class helloWorldCmd : MPxCommand,IMPxCommand
+    {
+        public override void doIt(MArgList argl)
+        {
+            MGlobal.displayInfo("Hello World\n");
+        }
+    }
+}
