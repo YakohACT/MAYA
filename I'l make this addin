@@ -3,12 +3,12 @@ using System;
 using Autodesk.Maya.Runtime;
 using Autodesk.Maya.OpenMaya;
 
-[assembly: MPxCommandClass(typeof(MayaNetPlugin.helloWorldCmd), "helloWorldCmd")]
-[assembly: ExtensionPlugin(typeof(MayaNetPlugin.helloWorldPlugin), "Autodesk", "1.0", "Any")]
+[assembly: MPxCommandClass(typeof(MayaNetPlugin.helloWorldCmd), "Cmd")]
+[assembly: ExtensionPlugin(typeof(MayaNetPlugin.autofillPlugin), "Autodesk", "1.0", "Any")]
 
 namespace MayaNetPlugin
 {
-    public class helloWorldPlugin : IExtensionPlugin
+    public class autofillPlugin : IExtensionPlugin
     {
         bool IExtensionPlugin.InitializePlugin()
         {
@@ -27,11 +27,11 @@ namespace MayaNetPlugin
 
     }
 
-    public class helloWorldCmd : MPxCommand,IMPxCommand
+    public class autofillCmd : MPxCommand,IMPxCommand
     {
         public override void doIt(MArgList argl)
         {
-            MGlobal.displayInfo("Hello World\n");
+            MGlobal.displayInfo("autofill\n");
         }
     }
 }
