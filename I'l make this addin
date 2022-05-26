@@ -3,7 +3,7 @@ using System;
 using Autodesk.Maya.Runtime;
 using Autodesk.Maya.OpenMaya;
 
-[assembly: MPxCommandClass(typeof(MayaNetPlugin.helloWorldCmd), "Cmd")]
+[assembly: MPxCommandClass(typeof(MayaNetPlugin.autofillCmd), "Cmd")]
 [assembly: ExtensionPlugin(typeof(MayaNetPlugin.autofillPlugin), "Autodesk", "1.0", "Any")]
 
 namespace MayaNetPlugin
